@@ -1,183 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url("vignan.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("vignan.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 
-    .top {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
+.top {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  gap: 5px;
+}
 
-    .logo {
-      font-size: clamp(16px, 4vw, 20px);
-      font-weight: bold;
-    }
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
-    .user {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      font-size: clamp(14px, 3vw, 16px);
-    }
+.user {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
 
-    .top a {
-      color: white;
-      text-decoration: none;
-    }
-    .top a:hover {
-      text-decoration: underline;
-    }
+.top a {
+  color: white;
+  text-decoration: none;
+}
 
-    .main {
-      width: 95%;
-      max-width: 800px;
-      margin: 15px auto;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 10px;
-      flex-grow: 1;
-    }
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 900px;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
-    h1 {
-      color: #333333;
-      font-size: clamp(18px, 4vw, 24px);
-      margin-top: 0;
-    }
+h1 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  color: #333;
+}
 
-    .qr {
-      text-align: center;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
+.qr {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 8px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: clamp(14px, 3vw, 18px);
-      cursor: pointer;
-      background-color: #5cb85c;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-    }
-    .btn:hover {
-      background-color: #4cae4c;
-    }
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
 
-    .course {
-      border: 1px solid #dddddd;
-      padding: 10px;
-      margin-bottom: 10px;
-      background-color: rgba(255, 255, 255, 0.6);
-      border-radius: 5px;
-      transition: background-color 0.2s ease;
-    }
-    .course:hover {
-      background-color: rgba(255, 255, 255, 0.8);
-    }
+.btn:hover {
+  background-color: #4cae4c;
+}
 
-    .course h3 {
-      margin: 0;
-      font-size: clamp(14px, 3.5vw, 18px);
-    }
+.course {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.6);
+  border: 1px solid #ddd;
+}
 
-    .course a {
-      text-decoration: none;
-      color: #333;
-      display: block;
-    }
+.course h3 {
+  margin: 0;
+  font-size: 1rem;
+}
 
-    @media (max-width: 600px) {
-      .main {
-        padding: 10px;
-      }
-      .qr {
-        padding: 10px;
-      }
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-      .user {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+.course a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+@media(min-width: 600px){
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn {
+    width: auto;
+  }
+}
+</style>
 </head>
 <body>
-  <div class="top">
-    <div class="logo">QR Attendance</div>
-    <div class="user">
-      <span id="studentNameDisplay">Welcome, Student Name</span>
-      <a href="student-login.html" id="logoutBtn">Logout</a>
-    </div>
+<div class="top">
+  <div class="logo">QR Attendance</div>
+  <div class="user">
+    <span id="studentNameDisplay">Welcome, Student Name</span>
+    <a href="student-login.html" id="logoutBtn">Logout</a>
+  </div>
+</div>
+
+<div class="main">
+  <div class="qr">
+    <a href="scan-qr-page.html" class="btn">Scan QR Code for Attendance</a>
   </div>
 
-  <div class="main">
-    <div class="qr">
-      <a href="scan-qr-page.html" class="btn">Scan QR Code for Attendance</a>
+  <h1>My Enrolled Courses</h1>
+  <div class="list">
+    <div class="course">
+      <a href="student-history.html">
+        <h3>CS101: Introduction to Programming</h3>
+      </a>
     </div>
-
-    <h1>My Enrolled Courses</h1>
-    <p>You are currently enrolled in the following courses:</p>
-    <p>Press below courses to view your attendance history</p>
-
-    <div class="list">
-      <div class="course">
-        <a href="student-history.html">
-          <h3>CS101: Introduction to Programming</h3>
-        </a>
-      </div>
-      <div class="course">
-        <a href="student-history.html">
-          <h3>PHY110: Classical Mechanics</h3>
-        </a>
-      </div>
+    <div class="course">
+      <a href="student-history.html">
+        <h3>PHY110: Classical Mechanics</h3>
+      </a>
     </div>
   </div>
+</div>
 
-  <script>
-    const studentName = localStorage.getItem("studentName");
-
-    if (studentName) {
-      document.getElementById("studentNameDisplay").textContent = "Welcome, " + studentName;
-    } else {
-      window.location.href = "student-login.html";
-    }
-
-    document.getElementById("logoutBtn").addEventListener("click", function() {
-      localStorage.removeItem("studentName");
-    });
-  </script>
+<script>
+const studentName = localStorage.getItem("studentName");
+if(studentName){
+  document.getElementById("studentNameDisplay").textContent = "Welcome, " + studentName;
+}else{
+  window.location.href = "student-login.html";
+}
+document.getElementById("logoutBtn").addEventListener("click", function(){
+  localStorage.removeItem("studentName");
+});
+</script>
 </body>
 </html>
