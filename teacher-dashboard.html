@@ -14,15 +14,16 @@
 
     body {
       background: url('vignan.jpg') no-repeat center center/cover;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 15px;
     }
 
     .teacherdashboard {
-      width: 90%;
-      max-width: 850px;
+      width: 100%;
+      max-width: 900px;
       padding: 30px;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.25);
@@ -37,6 +38,8 @@
       align-items: center;
       margin-bottom: 30px;
       color: #222;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .logo {
@@ -71,6 +74,8 @@
       justify-content: space-between;
       align-items: center;
       transition: background 0.3s;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .course-card:hover {
@@ -99,6 +104,7 @@
       cursor: pointer;
       font-weight: bold;
       transition: 0.3s;
+      white-space: nowrap;
     }
 
     .manage-btn {
@@ -121,16 +127,35 @@
       transform: scale(1.05);
     }
 
-    @media (max-width: 600px) {
+    /* 📱 Mobile Styling */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 22px;
+      }
+      .user-info {
+        font-size: 14px;
+      }
+      .user-info b {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .teacherdashboard {
+        padding: 20px;
+      }
       .course-card {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .card-buttons {
         width: 100%;
         justify-content: flex-start;
         margin-top: 10px;
+      }
+      .card-buttons button {
+        flex: 1;
+        text-align: center;
       }
     }
   </style>
@@ -185,7 +210,6 @@
   </div>
 
   <script>
-
     const teacherName = localStorage.getItem("teacherName") || "Teacher";
     document.getElementById("teacherName").textContent = teacherName;
 
