@@ -15,14 +15,16 @@
       font-family: Arial, sans-serif;
       background: url("vignan.jpg") no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 15px;
     }
 
     .box {
-      width: 320px;
+      width: 100%;
+      max-width: 350px;
       padding: 30px;
       background: rgba(255, 255, 255, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -36,6 +38,7 @@
       text-align: center;
       color: #333;
       margin-bottom: 25px;
+      font-size: 24px;
     }
 
     label {
@@ -63,6 +66,11 @@
       font-size: 16px;
       cursor: pointer;
       border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #356996;
     }
 
     .link {
@@ -84,6 +92,28 @@
       text-align: center;
       margin-bottom: 10px;
       font-size: 14px;
+    }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 500px) {
+      .box {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .txt {
+        font-size: 13px;
+        padding: 8px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 8px;
+      }
     }
   </style>
 </head>
