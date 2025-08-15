@@ -17,6 +17,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .top {
       background-color: rgba(0, 0, 0, 0.7);
       color: white;
@@ -26,10 +27,12 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .logo {
       font-size: clamp(16px, 4vw, 20px);
       font-weight: bold;
     }
+
     .user {
       display: flex;
       flex-wrap: wrap;
@@ -37,6 +40,7 @@
       align-items: center;
       font-size: clamp(14px, 3vw, 16px);
     }
+
     .top a {
       color: white;
       text-decoration: none;
@@ -44,6 +48,7 @@
     .top a:hover {
       text-decoration: underline;
     }
+
     .main {
       width: 95%;
       max-width: 800px;
@@ -55,11 +60,13 @@
       border-radius: 10px;
       flex-grow: 1;
     }
+
     h1 {
       color: #333333;
       font-size: clamp(18px, 4vw, 24px);
       margin-top: 0;
     }
+
     .qr {
       text-align: center;
       padding: 15px;
@@ -69,6 +76,7 @@
       margin-bottom: 20px;
       border-radius: 8px;
     }
+
     .btn {
       display: inline-block;
       padding: 12px 20px;
@@ -84,6 +92,7 @@
     .btn:hover {
       background-color: #4cae4c;
     }
+
     .course {
       border: 1px solid #dddddd;
       padding: 10px;
@@ -95,15 +104,18 @@
     .course:hover {
       background-color: rgba(255, 255, 255, 0.8);
     }
+
     .course h3 {
       margin: 0;
       font-size: clamp(14px, 3.5vw, 18px);
     }
+
     .course a {
       text-decoration: none;
       color: #333;
       display: block;
     }
+
     @media (max-width: 600px) {
       .main {
         padding: 10px;
@@ -130,13 +142,16 @@
       <a href="student-login.html" id="logoutBtn">Logout</a>
     </div>
   </div>
+
   <div class="main">
     <div class="qr">
       <a href="scan-qr-page.html" class="btn">Scan QR Code for Attendance</a>
     </div>
+
     <h1>My Enrolled Courses</h1>
     <p>You are currently enrolled in the following courses:</p>
     <p>Press below courses to view your attendance history</p>
+
     <div class="list">
       <div class="course">
         <a href="student-history.html">
@@ -150,13 +165,16 @@
       </div>
     </div>
   </div>
+
   <script>
     const studentName = localStorage.getItem("studentName");
+
     if (studentName) {
       document.getElementById("studentNameDisplay").textContent = "Welcome, " + studentName;
     } else {
       window.location.href = "student-login.html";
     }
+
     document.getElementById("logoutBtn").addEventListener("click", function() {
       localStorage.removeItem("studentName");
     });
