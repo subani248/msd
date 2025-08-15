@@ -22,7 +22,8 @@
     }
 
     .loginbox {
-      width: 320px;
+      width: 90%; /* Responsive width */
+      max-width: 400px; /* Maximum width for larger screens */
       padding: 30px;
       background: rgba(255, 255, 255, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -42,26 +43,26 @@
       display: block;
       margin-bottom: 5px;
       color: #333333;
-      font-size: 14px;
+      font-size: 16px; /* Increased font size for better readability on mobile */
     }
 
     input[type="text"],
     input[type="password"] {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
+      padding: 12px; /* Increased padding for better touch input */
+      margin-bottom: 20px; /* Increased margin */
       border: 1px solid #cccccc;
       border-radius: 5px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .login-button {
       width: 100%;
-      padding: 10px;
+      padding: 12px; /* Increased padding for better touch input */
       background-color: #5cb85c;
       color: white;
       border: none;
-      font-size: 16px;
+      font-size: 18px; /* Increased font size */
       cursor: pointer;
       border-radius: 5px;
     }
@@ -69,7 +70,7 @@
     .back-link {
       text-align: center;
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 16px; /* Increased font size */
     }
 
     .back-link a {
@@ -79,6 +80,17 @@
 
     .back-link a:hover {
       text-decoration: underline;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 600px) {
+      .loginbox {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
